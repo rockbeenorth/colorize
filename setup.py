@@ -7,9 +7,9 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
-    name='Colorize-UI',  # Required
+    name='rockbee-colorize',  # Required
     version='0.1.0',  # Required
-    description='UI color schemes generator',  # Optional
+    description='Generates CSS color library for dark and light modes: swatches and text colors based on one hue.',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
     url='https://github.com/rockbeenorth/colorize',  # Optional
