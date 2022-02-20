@@ -38,8 +38,8 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
     ],
     keywords='color sceme, palette, css color, color generator',  # Optional
-    package_dir={'': 'colorize'},  # Optional
-    packages=find_packages(where='colorize'),  # Required
+    package_dir={'': 'src'},  # Optional
+    packages=find_packages(where='src'),  # Required
     python_requires='>=3.8, <4',
 
 
