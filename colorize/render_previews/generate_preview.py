@@ -1,3 +1,28 @@
+from config import color_settings, file_paths
+
+def generate_basic_css():
+
+# :root {
+#     --text-color: hsl(0, 0%, 10%);
+#     --text-color-dark: hsl(0, 0%, 5%);
+#     --text-color-light: hsl(0, 0%, 99%);
+#     --text-color-white: hsl(0, 0%, 99%);
+#     --text-color-black: hsl(0, 0%, 5%);
+    
+#     --bg-color: hsl(0, 0%, 99%);
+
+#     @include dark-mode {
+#         --text-color: hsl(0, 0%, 99%);
+#         --text-color-dark: hsl(0, 0%, 99%);
+#         --text-color-light: hsl(0, 0%, 5%);
+    
+#         --bg-color: hsl(0, 0%, 6%);
+#     }
+# }
+
+    pass
+
+
 def generate_color_scheme(collections:dict) -> list:
 
     """
