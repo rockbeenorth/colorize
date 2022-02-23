@@ -1,4 +1,4 @@
-# Colorize UI
+# RB-Colorize
 
 Compact library to generate CSS/SCSS code and preview for layered UI.
 
