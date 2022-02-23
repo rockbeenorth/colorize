@@ -4,11 +4,17 @@ tools/__pycache__/
 *.py[cod]
 *$py.class
 
+temp.html
+
+.vscode
 output/
 # C extensions
 *.so
 
+*.ipynb
+
 # Distribution / packaging
+env/
 .Python
 build/
 develop-eggs/

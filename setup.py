@@ -7,7 +7,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
-    name='rockbee-colorize',  # Required
+    name='Rockbee-Colorize',  # Required
     version='0.1.0',  # Required
     description='Generates CSS color library for dark and light modes: swatches and text colors based on one hue.',  # Optional
     long_description=long_description,  # Optional
@@ -38,8 +38,8 @@ setup(
         'Programming Language :: Python :: 3 :: Only',
     ],
     keywords='color sceme, palette, css color, color generator',  # Optional
-    package_dir={'': 'src'},  # Optional
-    packages=find_packages(where='src'),  # Required
+    package_dir={'': 'rb_colorize'},  # Optional
+    packages=find_packages(where='rb_colorize'),  # Required
     python_requires='>=3.8, <4',
 
 
