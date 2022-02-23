@@ -1,5 +1,3 @@
-import json
-
 from config import settings
 
 from tools.generate_swatches_list import generate_swatches_list
@@ -48,8 +46,8 @@ def main(
         lightness = 0
 
     hue = degree_correction(hue)
-    second = degree_correction(hue-120)
-    third = degree_correction(hue+120)
+    # second = degree_correction(hue-120)
+    # third = degree_correction(hue+120)
 
     
     palettes = {}
@@ -60,18 +58,20 @@ def main(
     # GENERATE GRAYSCALE IF THE ORIGINAL WAS NOT GRAY
     if saturation != 0:
         palettes["grayscale"] = generate_swatches_list(0, steps, 0, lightness, opacity, "grayscale", True)
-    
 
-
-
-# curl -H "Content-Type: application/json" -X POST -d '{"hue": 202, "steps": 7, "saturation": 90, "lightness": 90}' http://localhost:5005/colorize/api > dump.json
     
     return palettes
+    
+    # curl -H "Content-Type: application/json" -X POST -d '{"hue": 202, "steps": 7, "saturation": 90, "lightness": 90}' http://localhost:5005/colorize/api > dump.json
+
+
 if __name__ == "__main__":
     
-    print(main(201, 5))
+    import json
 
     jsonified = json.dumps(main(201, 5), sort_keys=True, indent=4)
 
-    with open("output/colors.json", "w+") as f:
+    print(jsonified)
+
+    with open("../output/colors.json", "w") as f:
         f.write(jsonified)
