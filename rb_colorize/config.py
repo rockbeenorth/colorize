@@ -1,5 +1,6 @@
 settings = {
     "COLLECTIONS": ["art", "bart", "cart"],
+    "DARK_DESATURATE": 0,
 }
 
 color_settings = {

@@ -5,7 +5,8 @@ from tools.normalize_color import degree_correction
 
 names = settings["COLLECTIONS"]
 
-def main(
+
+def swatcher(
     hue: int,
     steps: int,
     saturation = 100,
