@@ -1,6 +1,11 @@
+import os
+
+PROJECT_DIRECTORY = os.getcwd().replace('/rb_colorize', '')
+
 settings = {
     "COLLECTIONS": ["art", "bart", "cart"],
-    "DARK_DESATURATE": 0,
+    "DARK_DESATURATE": 15,
+    "FONT": '-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Fira Sans", Roboto, Ubuntu, "Droid Sans", "Arial", sans-serif',
 }
 
 color_settings = {
@@ -11,7 +16,11 @@ color_settings = {
 }
 
 file_paths = {
-    "COLOR_SCHEME" : "output/css/_basic_styles.css",
-    "COLOR_SCHEME" : "output/css/_color_scheme.css",
-    "COLOR_LAYERS" : "output/css/_color_layers.css",
+    "PATH":         f"{PROJECT_DIRECTORY}/core/",
+    "BASIC_CSS" :   "_color_scheme.scss",
+    "COLOR_SCHEME": "_colors.scss",
+    "COLOR_LAYERS": "_color_layers.scss",
+    "CARDS_HTML":   "_cards.html",
+    "CARDS_LAYERED_HTML":   "_cards_layered.html",
+    "INDEX_HTML":   "index.html",
 }

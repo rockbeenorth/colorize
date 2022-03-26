@@ -1,7 +1,8 @@
-from config import settings
+from config import settings, file_paths
 from tools.collection import get_collection
 from tools.normalize_color import degree_correction
 from previews.generate_preview import divs_sum_recursive
+import os
 
 collection_names = settings["COLLECTIONS"]
 
@@ -65,19 +66,20 @@ def render_css_colors(h:int, s=100) -> list:
     lines = open_string + light_lines + open_dark + dark_lines + close_dark + close_string
     layered_html = divs_sum_recursive(layers_titles)
 
-    with open("../../output/_colors.css", "w") as f:
+
+    with open(f"{file_paths['PATH']}{file_paths['COLOR_SCHEME']}", "w") as f:
         for line in lines:
             f.write(line)
 
-    with open("../../output/_layers.css", "w") as f:
+    with open(f"{file_paths['PATH']}{file_paths['COLOR_LAYERS']}", "w") as f:
         for line in layers:
             f.write(line)
 
-    with open("../../output/_layers_cards.html", "w") as f:
+    with open(f"{file_paths['PATH']}{file_paths['CARDS_HTML']}", "w") as f:
         for line in layers_html:
             f.write(line)
 
-    with open("../../output/_layers_recursive.html", "w") as f:
+    with open(f"{file_paths['PATH']}{file_paths['CARDS_LAYERED_HTML']}", "w") as f:
         for line in layered_html:
             f.write(line)
 

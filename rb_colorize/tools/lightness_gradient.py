@@ -45,8 +45,8 @@ def get_gradient(steps = 12) -> tuple:
 
 if __name__ == "__main__":
     rez = build_gradient(build_steps(12))
-    print(rez[0], len(rez[0]))
-    print(rez[1], len(rez[1]))
+    # print(rez[0], len(rez[0]))
+    # print(rez[1], len(rez[1]))
 
     x = get_gradient()
     print(x)

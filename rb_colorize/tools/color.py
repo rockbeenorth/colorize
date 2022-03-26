@@ -51,9 +51,7 @@ class Color:
     def get_hex_value(self):
         return rgb_to_hex(*self.rgb)
 
-
     def __repr__(self):
-
         return f"Color({self.name}-{self.order}: {self.h}, {self.s}, {self.l})"
 
 if __name__ == "__main__":

@@ -1,151 +1,83 @@
-from config import color_settings, file_paths
+from config import color_settings, file_paths, settings
 
 def generate_basic_css():
+    template = ':root {\n' + \
+    f'''
+    --text-color: {color_settings["TEXT_BLACK"]};
+    --text-color-dark: {color_settings["TEXT_BLACK"]};
+    --text-color-light: {color_settings["TEXT_WHITE"]};
+    --text-color-white: {color_settings["TEXT_WHITE"]};
+    --text-color-black: {color_settings["TEXT_BLACK"]};
+    --bg-color: {color_settings["BACKGROUND_COLOR_LIGHT"]};
+    --font-display: {settings["FONT"]};
 
-# :root {
-#     --text-color: hsl(0, 0%, 10%);
-#     --text-color-dark: hsl(0, 0%, 5%);
-#     --text-color-light: hsl(0, 0%, 99%);
-#     --text-color-white: hsl(0, 0%, 99%);
-#     --text-color-black: hsl(0, 0%, 5%);
+    @media (prefers-color-scheme: dark) ''' + ' {\n' + \
+    f'''
+        --text-color: {color_settings["TEXT_WHITE"]};
+        --text-color-dark: {color_settings["TEXT_WHITE"]};
+        --text-color-light: {color_settings["TEXT_BLACK"]};
+
+        --bg-color: {color_settings["BACKGROUND_COLOR_DARK"]};
+        ''' + "\n" + \
+    '''}
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        margin: 0;
+        font-family: var(--font-display);
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+    ''' + \
+    '''
+    .colorize__demo_card {
+        padding: 16px;
+    }
     
-#     --bg-color: hsl(0, 0%, 99%);
+    '''
 
-#     @include dark-mode {
-#         --text-color: hsl(0, 0%, 99%);
-#         --text-color-dark: hsl(0, 0%, 99%);
-#         --text-color-light: hsl(0, 0%, 5%);
-    
-#         --bg-color: hsl(0, 0%, 6%);
-#     }
-# }
+    with open(f'{file_paths["PATH"]}{file_paths["BASIC_CSS"]}', "w") as f:
+        f.write(template)
 
-    pass
+    return True
 
+def index_html():
+    """Renders index.html"""
 
-def generate_color_scheme(collections:dict) -> list:
+    # file_path = f'{file_paths["PATH"]}{file_paths["INDEX_HTML"]}'
 
-    """
-    Generates output CSS file with light and dark schemes for each collection in the `collections:dict`.
-    """
+    with open(f'{file_paths["PATH"]}{file_paths["CARDS_HTML"]}', "r") as f:
+        cards = f.read().replace('\n', '')
 
-    lines = []
-    
-    open_string = ":root {\n"
-    close_string = "}"
-    light = []
-    dark = []
-    open_dark = "\t@media (prefers-color-scheme: dark) {\n"
-    close_dark = "\t}\n"
+    with open(f'{file_paths["PATH"]}{file_paths["CARDS_LAYERED_HTML"]}', "r") as f:
+        layers = f.read().replace('\n', '')
 
-    lines.append(open_string)
+    template = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Colorize preview</title>
+</head>
+<body>
+    {cards}
+    {layers}
+</body>
+</html>
+'''
 
-    for collection in collections:
+    with open(f'{file_paths["PATH"]}{file_paths["INDEX_HTML"]}', "w") as f:
+        f.write(template)
 
-        dark_layers = []
-        dark_values = []
+    return True
 
-        for color in collections[collection]:
-            if color.get("light"):
-                c = color["light"]
-                hsla_string = f'--{color["name"]}: hsla({c["hsla"][0]}, {c["hsla"][1]}%, {c["hsla"][2]}%, {c["hsla"][3]});' 
-                string = "\t" + hsla_string + "\n"
-                light.append(string)
-            if color.get("dark"):
-                if color["layer"] == 0:
-                    c = color["dark"]
-                    hsla_string = f'--{color["name"]}: hsla({c["hsla"][0]}, {c["hsla"][1]}%, {c["hsla"][2]}%, {c["hsla"][3]});' 
-                    string = "\t\t" + hsla_string + "\n"
-                    dark.append(string)
-                if color["layer"] != 0:
-                    c = color["dark"]
-                    hsla_string = f'hsla({c["hsla"][0]}, {c["hsla"][1]}%, {c["hsla"][2]}%, {c["hsla"][3]});' 
-                    dark_layers.append(f'--{color["name"]}: ')
-                    dark_values.append(hsla_string)
-
-
-            dark_zipped = list(zip(dark_layers, dark_values[::-1]))
-        
-        for c in dark_zipped:
-            string = f'{c[0]}{c[1]}'
-            dark.append("\t\t" + string + "\n")
-        
-
-    for line in light:
-        lines.append(line)
-    
-    lines.append(open_dark)
-
-    for line in dark:
-        lines.append(line)
-
-    lines.append(close_dark)
-
-    lines.append(close_string)
-
-    with open("./source/_output_colors.scss", "w") as f:
-        for line in lines:
-            f.write(line)
-
-    return lines
-
-
-
-def generate_layers(collections: dict) -> list:
-
-    layers = []
-    names = []
-
-    for collection in collections:
-        for color in collections[collection]:
-            if color.get("light"):
-                c = color["light"]
-
-                layer_name = f'{collection}-layer-{color["layer"]}'
-
-                if c["light_text"]:
-                    text_color = "\tcolor: var(--text-color-light);\n"
-                else:
-                    text_color = "\tcolor: var(--text-color-dark);\n"
-
-                # if color["layer"] == 0:
-                #     text_color = "\tcolor: var(--text-color-white);\n"
-
-                if collection == "grayscale" and color["layer"] == 0:
-                    text_color = "\tcolor: var(--text-color-black);\n"
-
-                layer = "." + layer_name + " {\n"
-                bg_color = f'\tbackground-color: var(--{color["name"]});\n'
-                close_line = "}\n"
-
-                layers.append(layer + text_color + bg_color + close_line)
-                names.append(layer_name)
-
-
-    with open("./source/_output_layers.scss", "w") as f:
-        for line in layers:
-            f.write(line)
-
-    print(names)
-    
-    return names
-
-
-def render_html_swatches(names:list):
-    html_strings = []
-
-    for name in names:
-        html_string = f'''
-<div class="{name} colorize__demo_card">
-    <h1>Demo lorem ipsum</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vitae minus, quaerat vero sit sed rem debitis distinctio hic laboriosam optio error! Incidunt corporis veniam asperiores modi ducimus, inventore sit!</p>
-    <p class="small-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vitae minus, quaerat vero sit sed rem debitis distinctio hic laboriosam optio error! Incidunt corporis veniam asperiores modi ducimus, inventore sit!</p>
-</div>'''
-        html_strings.append(html_string)
-
-    with open("./core/templates/__colorize_generated_stand.html", "w") as f:
-        for element in html_strings:
-            f.write(element + "\n")
 
 def render_html_layered(collections:dict) -> list:
 
@@ -169,7 +101,6 @@ def render_html_layered(collections:dict) -> list:
         for line in lines:
             f.write(line + "\n")
 
-
 def divs_sum_recursive(input_list):
     # Base case
     if input_list == []:
@@ -182,10 +113,13 @@ def divs_sum_recursive(input_list):
     else:
         head = input_list[0]
         smaller_list = input_list[1:]
-        string = f'<div class="{head} temp_demo_stand_class"><code class="small-paragraph">Class: {head}</code>{divs_sum_recursive(smaller_list)}</div>'
+        string = f'<div class="{head} colorize__demo_card"><code class="small-paragraph">Class: {head}</code>{divs_sum_recursive(smaller_list)}</div>'
         return string
 
 if __name__ == "__main__":
 
-    swatches = ["layer-1","l    ayer-2","layer-3","layer-4","layer-5","layer-6"]
-    print(divs_sum_recursive(swatches))
+    # swatches = ["layer-1","layer-2","layer-3","layer-4","layer-5","layer-6"]
+    # print(divs_sum_recursive(swatches))
+
+    generate_basic_css()
+    index_html()
