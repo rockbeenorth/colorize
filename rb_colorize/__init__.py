@@ -1,11 +1,61 @@
 from config import settings
-from previews.css import render_css_colors
-from previews.generate_preview import index_html
 
-# from tools.generate_swatches_list import generate_swatches_list
-# from tools.normalize_color import degree_correction
+from tools.collection import get_collection, get_collection_json
+from tools.normalize_color import degree_correction
 
-names = settings["COLLECTIONS"]
+collection_names = settings["COLLECTIONS"]
+
+def main(h:int, s=100) -> list:
+
+    palettes = {}
+
+    collections = [
+        {
+            "h": h, "s": s,
+            "name": collection_names[0],
+            },
+        {
+            "h": degree_correction(h+120),
+            "s": s,
+            "name": collection_names[1],
+            },
+        {
+            "h": degree_correction(h-120),
+            "s": s,
+            "name": collection_names[2],
+            },
+    ]
+
+    for collection in collections:
+        palettes[collection["name"]] = get_collection_json(**collection)
+
+    return palettes
+
+    
+#     # curl -H "Content-Type: application/json" -X POST -d '{"hue": 202, "steps": 7, "saturation": 90, "lightness": 90}' http://localhost:5005/colorize/api > dump.json
+
+
+if __name__ == "__main__":
+    
+    # import json
+
+    # jsonified = json.dumps(swatcher(341), sort_keys=True, indent=4)
+
+    # print(jsonified)
+
+    # with open("../output/colors.json", "w") as f:
+    #     f.write(jsonified)
+
+    x = main(341)
+    print(x)
+
+    from previews.css import render_css_colors
+    from previews.generate_preview import index_html
+
+    render_css_colors(341)
+    index_html()
+
+
 
 
 # def swatcher(
@@ -63,21 +113,4 @@ names = settings["COLLECTIONS"]
 #         palettes["grayscale"] = generate_swatches_list(0, steps, 0, lightness, opacity, "grayscale", True)
 
     
-#     return palettes
-    
-#     # curl -H "Content-Type: application/json" -X POST -d '{"hue": 202, "steps": 7, "saturation": 90, "lightness": 90}' http://localhost:5005/colorize/api > dump.json
-
-
-if __name__ == "__main__":
-    
-    # import json
-
-    # jsonified = json.dumps(swatcher(201, 5), sort_keys=True, indent=4)
-
-    # print(jsonified)
-
-    # with open("../output/colors.json", "w") as f:
-    #     f.write(jsonified)
-
-    render_css_colors(341)
-    index_html()
+#     return palettes    

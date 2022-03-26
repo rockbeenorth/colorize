@@ -1,3 +1,5 @@
+import json
+
 from tools.color_conversions import hsl_to_rgb, rgb_to_hex
 from tools.normalize_color import degree_correction, normalize_color, normalize_to_hundred
 from tools.check_brightness import is_light_text_rgb
@@ -50,6 +52,16 @@ class Color:
 
     def get_hex_value(self):
         return rgb_to_hex(*self.rgb)
+
+    def get_json(self):
+        repr = {
+            "var": self.get_variable(),
+            "hex": self.hex,
+            "rgb": self.rgb,
+            "hsl": self.hsl,
+            "bright_text": self.bright_text
+        }
+        return json.dumps(repr)
 
     def __repr__(self):
         return f"Color({self.name}-{self.order}: {self.h}, {self.s}, {self.l})"

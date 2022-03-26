@@ -2,7 +2,6 @@ from config import settings, file_paths
 from tools.collection import get_collection
 from tools.normalize_color import degree_correction
 from previews.generate_preview import divs_sum_recursive
-import os
 
 collection_names = settings["COLLECTIONS"]
 
