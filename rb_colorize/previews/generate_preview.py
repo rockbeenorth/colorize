@@ -97,7 +97,7 @@ def render_html_layered(collections:dict) -> list:
         string = divs_sum_recursive(r_collections[r])
         lines.append(string)
 
-    with open("./core/templates/__colorize_generated_stand-layers.html", "w") as f:
+    with open("__colorize_generated_stand-layers.html", "w") as f:
         for line in lines:
             f.write(line + "\n")
 

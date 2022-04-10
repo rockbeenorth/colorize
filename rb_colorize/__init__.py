@@ -24,6 +24,21 @@ def main(h:int, s=100) -> list:
             "s": s,
             "name": collection_names[2],
             },
+        {
+            "h": degree_correction(h+37),
+            "s": s,
+            "name": 'error',
+            },
+        {
+            "h": degree_correction(h-37),
+            "s": s,
+            "name": 'notify',
+            },
+        {
+            "h": 1,
+            "s": 100,
+            "name": 'grey',
+            },
     ]
 
     for collection in collections:
@@ -37,12 +52,12 @@ def main(h:int, s=100) -> list:
 
 if __name__ == "__main__":
     
-    x = main(341)
+    x = main(220)
     print(x)
 
     from previews.css import render_css_colors
     from previews.generate_preview import index_html
 
-    render_css_colors(341)
+    render_css_colors(147)
     index_html()
 

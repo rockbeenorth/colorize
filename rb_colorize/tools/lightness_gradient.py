@@ -1,4 +1,5 @@
 import math
+from config import settings
 
 def step(x):
     return 1 - math.sqrt(1 - x * x)
@@ -14,6 +15,8 @@ def build_gradient(steps):
 
     for i in steps:
         x = int(round(step(i) * 100, 0))
+        # DARK_INCREASE_BRIGHTNESS
+        x = x + settings["DARK_INCREASE_BRIGHTNESS"]
         dark.add(x)
 
     light_list = list(light)

@@ -24,6 +24,21 @@ def render_css_colors(h:int, s=100) -> list:
             "s": s,
             "name": collection_names[2],
             },
+        {
+            "h": 0,
+            "s": 0,
+            "name": "grey",
+            },
+        {
+            "h": degree_correction(h+37),
+            "s": s,
+            "name": 'error',
+            },
+        {
+            "h": degree_correction(h-37),
+            "s": s,
+            "name": 'notify',
+            },
     ]
 
     for collection in collections:
@@ -90,7 +105,6 @@ def layers_html_template(name):
 <div class="{name} colorize__demo_card">
     <h1>Demo lorem ipsum</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vitae minus, quaerat vero sit sed rem debitis distinctio hic laboriosam optio error! Incidunt corporis veniam asperiores modi ducimus, inventore sit!</p>
-    <p class="small-paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit vitae minus, quaerat vero sit sed rem debitis distinctio hic laboriosam optio error! Incidunt corporis veniam asperiores modi ducimus, inventore sit!</p>
 </div>'''
 
 def layers_css_template(name, layer, text_color, c_var):

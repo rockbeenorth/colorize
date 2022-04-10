@@ -3,8 +3,9 @@ import os
 PROJECT_DIRECTORY = os.getcwd().replace('/rb_colorize', '')
 
 settings = {
-    "COLLECTIONS": ["art", "bart", "cart"],
-    "DARK_DESATURATE": 15,
+    "COLLECTIONS": ["layer", "upper", "lower"],
+    "DARK_DESATURATE": 30,
+    "DARK_INCREASE_BRIGHTNESS": 3,
     "FONT": '-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Fira Sans", Roboto, Ubuntu, "Droid Sans", "Arial", sans-serif',
 }
 

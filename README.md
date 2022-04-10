@@ -15,3 +15,9 @@ Let the computer generate a `N` shades of `Hue` and, two additional colors and g
 ### Command-line
 
 ### API
+
+### Library
+
+Begin here:
+
+`/tools/lightness_gradient.py` has all functions to generate logarithmic gradient for a given color. Returns two lists: for the light theme and for the dark theme. 

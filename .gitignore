@@ -4,6 +4,12 @@ tools/__pycache__/
 *.py[cod]
 *$py.class
 
+source/
+output/
+
+core/
+core/static
+
 temp.html
 
 .vscode
