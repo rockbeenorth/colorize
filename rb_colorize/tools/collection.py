@@ -5,18 +5,19 @@ from config import settings
 
 dark_desaturate = settings["DARK_DESATURATE"]
 
+
 def generate_collection(
-        h:int,
-        s:int,
-        gradient:list,
-        a = 1,
-        name = "core",
-        json_mode = False
-        ) -> list:
+        h: int,
+        s: int,
+        gradient: list,
+        a=1,
+        name="core",
+        json_mode=False
+) -> list:
     """
     Return a collection for a given lightness gradient (list).
     """
-    
+
     collection = []
 
     for n in gradient:
@@ -37,11 +38,12 @@ def generate_collection(
 
     return collection
 
+
 def get_collection(
-    h:int,
-    s=100,
-    a=1,
-    name = "core"):
+        h: int,
+        s=100,
+        a=1,
+        name="core"):
 
     gradient = get_gradient()
     light = gradient[0]
@@ -54,11 +56,12 @@ def get_collection(
 
     return palette
 
+
 def get_collection_json(
-    h:int,
-    s=100,
-    a=1,
-    name = "core"):
+        h: int,
+        s=100,
+        a=1,
+        name="core"):
 
     gradient = get_gradient()
     light = gradient[0]
@@ -71,11 +74,11 @@ def get_collection_json(
 
     return palette
 
+
 if __name__ == "__main__":
     x = get_collection(220, 90, name="arte")
     print(x)
-    for k,v in x.items():
+    for k, v in x.items():
         # print("\n", k, v)
         for color in v:
             print(color.order, color.hsl, color.bright_text, k)
-

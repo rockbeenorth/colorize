@@ -11,6 +11,7 @@ core/
 core/static
 
 temp.html
+drafts.ipynb
 
 .vscode
 output/

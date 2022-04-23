@@ -4,38 +4,43 @@ from tools.color_conversions import hsl_to_rgb, rgb_to_hex
 from tools.normalize_color import degree_correction, normalize_color, normalize_to_hundred
 from tools.check_brightness import is_light_text_rgb
 
+
 class Color:
 
     name = None
     layer = None
     order = None
-    
-    def __init__(self, h:int, s = 50, l = 50, a = 1):
+
+    def __init__(self, h: int, s=50, l=50, a=1):
         self.h = degree_correction(h)
         self.s = normalize_to_hundred(s)
         self.l = normalize_to_hundred(l)
         self.a = a
-        self.hsl = (h,s,l)
+        self.hsl = (h, s, l)
         self.rgb = self.get_rgb()
         self.hex = self.get_hex_value()
         self.bright_text = is_light_text_rgb(self.rgb)
         self.normalized = normalize_color(self.h)
 
-    def get_rgb(self):
-        return hsl_to_rgb(*self.hsl)
-
     # Setters
 
-    def set_layer(self, layer:int):
+    def set_layer(self, layer: int):
         self.layer = int(layer)
 
-    def set_order(self, order:int):
+    def set_order(self, order: int):
         self.order = int(order)
 
-    def set_name(self, name:str):
+    def set_name(self, name: str):
         self.name = str(name)
 
     # Getters
+
+    def get_opposite(self):
+        opposite_hue = degree_correction(self.h + 180)
+        return opposite_hue
+
+    def get_rgb(self):
+        return hsl_to_rgb(*self.hsl)
 
     def get_variable(self):
         if self.name and self.order:
@@ -47,7 +52,7 @@ class Color:
         return f'hsla({self.h}, {self.s}%, {self.l}%, {self.a})'
 
     def get_rgba_value(self):
-        r,g,b = self.rgb
+        r, g, b = self.rgb
         return f'rgba({r}, {g}, {b}, {self.a})'
 
     def get_hex_value(self):
@@ -66,12 +71,13 @@ class Color:
     def __repr__(self):
         return f"Color({self.name}-{self.order}: {self.h}, {self.s}, {self.l})"
 
+
 if __name__ == "__main__":
-    
+
     color = {
-        "h" : 220,
-        "s" : 90,
-        "l" : 98,
+        "h": 220,
+        "s": 90,
+        "l": 98,
     }
 
     c = Color(**color)
