@@ -15,5 +15,11 @@ def main(h, s):
 
 if __name__ == "__main__":
 
-    x = main(220, 80)
-    print(x)
+    from tools.color import Color
+    red = Color(1312, 700, 80)
+    red.set_name()
+    opposite = red.opposite
+
+    print(red.name, red, opposite)
+
+    main(220, 80)

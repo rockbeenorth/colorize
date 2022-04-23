@@ -9,7 +9,7 @@ dark_desaturate = settings["DARK_DESATURATE"]
 def generate_collection(
         h: int,
         s: int,
-        gradient: list,
+        gradient: list, # gradient is a list of integers containing lightness steps (e.g. [100, ... , 0])
         a=1,
         name="core",
         json_mode=False
@@ -42,7 +42,6 @@ def generate_collection(
 def get_collection(
         h: int,
         s=100,
-        a=1,
         name="core"):
 
     gradient = get_gradient()

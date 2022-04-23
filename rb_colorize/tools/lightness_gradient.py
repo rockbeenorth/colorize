@@ -1,8 +1,10 @@
 import math
 from config import settings
 
+
 def step(x):
     return 1 - math.sqrt(1 - x * x)
+
 
 def build_gradient(steps):
 
@@ -26,7 +28,8 @@ def build_gradient(steps):
 
     return light_list, dark_list
 
-def build_steps(n = 12):
+
+def build_steps(n=12):
     step_size = 1 / n
     nums = []
     x = 0
@@ -38,8 +41,9 @@ def build_steps(n = 12):
 
     return nums
 
-def get_gradient(steps = 12) -> tuple:
-    """Return `light` and `dark` gradients"""
+
+def get_gradient(steps=12) -> tuple:
+    """Return `light` and `dark` gradients (lists of `int` lightness values)"""
     steps = build_steps(steps)
     gradient = build_gradient(steps)
 
