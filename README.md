@@ -4,20 +4,27 @@ Compact library to generate CSS/SCSS code and preview for layered UI.
 
 ## Idea
 
-Let the computer generate a `N` shades of `Hue` and, two additional colors and grayscale that can work together in the user interface.
+Generate color palettes for a UI:
 
-### Input: hue + number of shades
+- Core/brand colors
+- Two additional color palettes
+- Errors
+- Notifications
+- Grayscale
 
-### Output: four color scales + generated CSS code
+Script generates all libraries based on one hue/saturation pair (only hue required to operate correctly).
 
-## Usage
+## Requirements
 
-### Command-line
+Python 3.7 and higher (using a lot of f-strings).
 
-### API
+## Install locally
 
-### Library
+1. Switch to a project folder `cd colorize`.
+1. Create a virtual environment `python3 -m venv env`.
+1. Activate a virtual environment `source env/bin/activate`
+1. `pip install -e .`
+1. `python`
+1. `import rb_colorize`
+2. `rb_colorize.version`
 
-Begin here:
-
-`/tools/lightness_gradient.py` has all functions to generate logarithmic gradient for a given color. Returns two lists: for the light theme and for the dark theme. 

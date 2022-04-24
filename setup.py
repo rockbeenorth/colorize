@@ -8,7 +8,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 
 setup(
     name='Rockbee-Colorize',  # Required
-    version='0.1.0',  # Required
+    version='0.1.5',  # Required
     description='Generates CSS color library for dark and light modes: swatches and text colors based on one hue.',  # Optional
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)

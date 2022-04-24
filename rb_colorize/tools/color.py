@@ -22,7 +22,7 @@ hue_group_names = {
     ('red', cool): range(345, 345+15),
     ('red', mid): range(0, 0+15),
     ('red', warm): range(15, 15+15),
-    ('orange'): range(30, 30+15),
+    ('orange', '') : range(30, 30+15),
     ('yellow', warm): range(45, 45+15),
     ('yellow', mid): range(60, 60+15),
     ('yellow', cool): range(75, 75+15),
@@ -38,7 +38,7 @@ hue_group_names = {
     ('blue', cool): range(225, 225+15),
     ('blue', mid): range(240, 240+15),
     ('blue', warm): range(255, 255+15),
-    ('violet'): range(270, 270+15),
+    ('violet', ''): range(270, 270+15),
     ('magenta', cool): range(285, 285+15),
     ('magenta', mid): range(300, 300+15),
     ('magenta', warm): range(315, 315+15),
@@ -52,7 +52,7 @@ def get_hue_group_name(hue: int) -> str:
         if hue in v:
             if k[1]:
                 return(f'{k[0]}-{k[1]}')
-            else:
+            elif not k[1]:
                 return(f'{k[0]}')
 
 
@@ -158,6 +158,7 @@ class Color:
 
     def get_json(self):
         repr = {
+            "var": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
             "rgb": self.rgb,
@@ -165,6 +166,17 @@ class Color:
             "bright_text": self.bright_text
         }
         return json.dumps(repr)
+
+    def get_object(self):
+        repr = {
+            "var": self.name,
+            "var": self.get_variable(),
+            "hex": self.hex,
+            "rgb": self.rgb,
+            "hsl": self.hsl,
+            "bright_text": self.bright_text
+        }
+        return repr
 
     def __repr__(self):
         return f"Color({self.name}-{self.order}: {self.h}, {self.s}, {self.l})"

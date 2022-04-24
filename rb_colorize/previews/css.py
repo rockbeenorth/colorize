@@ -12,7 +12,8 @@ def render_css_colors(h: int, s=100) -> list:
 
     collections = [
         {
-            "h": h, "s": s,
+            "h": h,
+            "s": s,
             "name": collection_names[0],
         },
         {

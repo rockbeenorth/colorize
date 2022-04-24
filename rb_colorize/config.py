@@ -12,12 +12,10 @@ settings = {
 }
 
 color_settings = {
-    "BACKGROUND_COLOR_LIGHT": Color(0, 0, 99).hex,
-    # "BACKGROUND_COLOR_LIGHT" : "hsl(0, 0%, 99%)",
+    "BACKGROUND_COLOR_LIGHT": Color(0, 0, 99).get_hsla_value(),
     "BACKGROUND_COLOR_DARK": Color(0, 0, 6).get_hsla_value(),
-    # "BACKGROUND_COLOR_DARK" : "hsl(0, 0%, 6%)",
-    "TEXT_WHITE": "hsl(0, 0%, 99%)",
-    "TEXT_BLACK": "hsl(0, 0%, 6%)",
+    "TEXT_WHITE": Color(0, 0, 99).get_hsla_value(),
+    "TEXT_BLACK": Color(0, 0, 6).get_hsla_value(),
 }
 
 file_paths = {
@@ -28,4 +26,8 @@ file_paths = {
     "CARDS_HTML":   "_cards.html",
     "CARDS_LAYERED_HTML":   "_cards_layered.html",
     "INDEX_HTML":   "index.html",
+}
+
+about = {
+    "VERSION": "Alpha 0.1.0"
 }

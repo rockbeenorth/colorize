@@ -31,7 +31,8 @@ def generate_collection(
         color.set_name(name)
 
         if json_mode:
-            collection.append(color.get_json())
+            # collection.append(color.get_json())
+            collection.append(color.get_object())
 
         else:
             collection.append(color)
