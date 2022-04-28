@@ -1,8 +1,123 @@
 import json
+from colorsys import hls_to_rgb  # , rgb_to_hls
+from math import sqrt
 
-from tools.color_conversions import hsl_to_rgb, rgb_to_hex
-from tools.normalize_color import degree_correction, normalize_color, normalize_to_hundred
-from tools.check_brightness import is_light_text_rgb
+THRESHOLD = 140
+
+
+def is_light_text(HSL: tuple, threshhold: int = THRESHOLD) -> bool:
+    """
+    Check if HSL color works with white font. Default brightness threshold is set to `140` (can be safely adjusted between 130 to 145).
+
+    In: `(h,s,l)` tuple;
+
+    Returns `bool`:
+
+    - `True` if text should be bright (white)
+    - `False` if text should be dark (black)
+    """
+    h, s, l = HSL
+
+    r, g, b = hsl_to_rgb(h, s, l)
+
+    brightness = sqrt(
+        r * r * .241 +
+        g * g * .691 +
+        b * b * .068
+    )
+
+    if brightness < threshhold:
+        return True
+    else:
+        return False
+
+
+def is_light_text_rgb(rgb: tuple, threshhold=THRESHOLD) -> bool:
+    """
+Check if RGB color works with white font. Default brightness threshold is set to `140` (can be safely adjusted between 130 to 145).
+
+In: `(r,g,b)` tuple;
+
+Returns `bool`:
+- `True` if text should be bright (white)
+- `False` if text should be dark (black)
+    """
+
+    r, g, b = rgb
+
+    brightness = sqrt(
+        r * r * .241 +
+        g * g * .691 +
+        b * b * .068
+    )
+
+    if brightness < threshhold:
+        return True
+    else:
+        return False
+
+
+def normalize_color(hue: int) -> tuple:
+    """
+Normalizes any HSLA `hue` (color, in range from 1 to 360) to the basic settings.
+
+Incoming: `hue` from HSLA system.
+
+Returns a tuple with normalized HSLA:
+
+`hue`: incoming, `saturation`: 100, `lightness`: 50, `opacity`: 1"""
+
+    if hue > 0:
+        return (hue, 100, 50, 1)
+    else:
+        return (hue, 100, 100, 1)
+
+
+def normalize_to_hundred(value: int) -> int:
+    """
+    Double-check if saturation or brightness contained within 0 to 100.
+    """
+
+    if value > 100:
+        return 100
+    elif value < 0:
+        return 0
+    else:
+        return value
+
+
+def degree_correction(hue: int) -> int:
+    """
+Checks if hue number is more than 360 degrees or less and returns correted number.
+    """
+
+    if hue < 0 or hue > 360:
+        return hue % 360
+    else:
+        return hue
+
+
+def hsl_to_rgb(hue: int, saturation: int, lightness: int) -> tuple:
+    """
+    *In:* `Hue` (0-360), `saturation` (0-100), `lightness` (0-100) as in HSL model.
+
+    *Out:* `(r, g, b)` normalized to RGB model (tuple).
+    """
+
+    H = hue/360
+    S = saturation/100
+    L = lightness/100
+
+    RGB = hls_to_rgb(H, L, S)
+
+    r, g, b = (int(round(i*255, 0)) for i in RGB)
+
+    return r, g, b
+
+
+def rgb_to_hex(r, g, b):
+    return '#{:02x}{:02x}{:02x}'.format(r, g, b)
+
 
 # Hue name adjustments
 cool = 'cool'
@@ -22,7 +137,7 @@ hue_group_names = {
     ('red', cool): range(345, 345+15),
     ('red', mid): range(0, 0+15),
     ('red', warm): range(15, 15+15),
-    ('orange', '') : range(30, 30+15),
+    ('orange', ''): range(30, 30+15),
     ('yellow', warm): range(45, 45+15),
     ('yellow', mid): range(60, 60+15),
     ('yellow', cool): range(75, 75+15),
@@ -158,7 +273,7 @@ class Color:
 
     def get_json(self):
         repr = {
-            "var": self.name,
+            "name": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
             "rgb": self.rgb,
@@ -169,7 +284,7 @@ class Color:
 
     def get_object(self):
         repr = {
-            "var": self.name,
+            "name": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
             "rgb": self.rgb,
