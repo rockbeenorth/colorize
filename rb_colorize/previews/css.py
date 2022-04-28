@@ -1,5 +1,6 @@
 from config import settings, file_paths
-from tools.collection import get_collection
+# from tools.collection import get_collection
+from tools.collection import Collection
 from tools.color import degree_correction
 from previews.generate_preview import divs_sum_recursive
 
@@ -29,12 +30,12 @@ def render_css_colors(h: int, s=100) -> list:
         {
             "h": 0,
             "s": 0,
-            "name": "grey",
+            "name": "gray",
         },
         {
             "h": degree_correction(h+37),
             "s": s,
-            "name": 'error',
+            "name": 'warning',
         },
         {
             "h": degree_correction(h-37),
@@ -44,7 +45,7 @@ def render_css_colors(h: int, s=100) -> list:
     ]
 
     for collection in collections:
-        palettes[collection["name"]] = get_collection(**collection)
+        palettes[collection["name"]] = Collection(**collection)
 
     # Template
     open_string = [":root {\n"]
