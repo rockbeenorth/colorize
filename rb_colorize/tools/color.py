@@ -273,7 +273,7 @@ class Color:
 
     def get_json(self):
         repr = {
-            "var": self.name,
+            "name": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
             "rgb": self.rgb,
@@ -284,7 +284,7 @@ class Color:
 
     def get_object(self):
         repr = {
-            "var": self.name,
+            "name": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
             "rgb": self.rgb,
