@@ -6,7 +6,7 @@ Compact library to generate CSS/SCSS code and preview for layered UI.
 
 Generate color palettes for a UI:
 
-- Core/brand colors
+- Core/brand color
 - Two additional color palettes
 - Errors
 - Notifications
@@ -28,3 +28,6 @@ Python 3.7 and higher (using a lot of f-strings).
 1. `import rb_colorize`
 2. `rb_colorize.version`
 
+## People suggest reading these
+
+1. https://learnui.design/blog/color-in-ui-design-a-practical-framework.html
