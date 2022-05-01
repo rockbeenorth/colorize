@@ -2,6 +2,8 @@
 
 Compact library to generate CSS/SCSS code and preview for layered UI.
 
+Demo: [https://rockbee.com/colorize](rockbee.com/colorize)
+
 ## Idea
 
 Generate color palettes for a UI:
