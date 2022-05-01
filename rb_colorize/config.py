@@ -5,7 +5,7 @@ PROJECT_DIRECTORY = os.getcwd().replace('/rb_colorize', '')
 
 settings = {
     "THRESHOLD": 140,
-    "COLLECTIONS": ["layer", "upper", "lower"],
+    "COLLECTIONS": ["arrow", "bungee", "cable"],
     "DARK_DESATURATE": 20,
     "DARK_INCREASE_BRIGHTNESS": 3,
     "FONT": '-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Fira Sans", Roboto, Ubuntu, "Droid Sans", "Arial", sans-serif',

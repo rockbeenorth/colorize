@@ -25,7 +25,12 @@ def build_steps(n=12):
         nums.append(x + step_size)
         x = x + step_size
 
-    return nums
+    # return nums
+    # TODO: this is a hack! Removing black abd white extremums
+
+    # print('steps: ', nums, len(nums[1:11]))
+    # print('steps 1-11: ', nums[1:11], len(nums[1:11]))
+    return nums[2:12]
 
 
 def build_gradient(steps=12) -> tuple:
@@ -35,12 +40,12 @@ def build_gradient(steps=12) -> tuple:
 
     # generate steps for the LIGHT scheme
     for i in steps:
-        x = int(100 - round(step(i) * 100, 0))
+        x = int(100 - step(i) * 100)
         light.add(x)
 
     # generate steps for the DARK scheme
     for i in steps:
-        x = int(round(step(i) * 100, 0))
+        x = int(step(i) * 100)
         x = x + settings["DARK_INCREASE_BRIGHTNESS"]
         dark.add(x)
 
@@ -87,6 +92,7 @@ class Collection:
         self.dark = self.get_collection(
             gradient=self.gradient[1], objects=False)
         self.objects = objects
+        # print('collection gradient', self.gradient)
 
     def get_collection(self, gradient, objects=True):
         collection = []

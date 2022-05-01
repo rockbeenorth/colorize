@@ -1,5 +1,4 @@
 from config import settings, file_paths
-# from tools.collection import get_collection
 from tools.collection import Collection
 from tools.color import degree_correction
 from previews.generate_preview import divs_sum_recursive
@@ -61,7 +60,7 @@ def render_css_colors(h: int, s=100) -> list:
     layers_titles = []
 
     for name, palette in palettes.items():
-        for c in palette["light"]:
+        for c in palette.light:
             light_lines.append("\t" + c.get_variable() +
                                ":\t" + c.get_hsla_value() + ";\n")
 
@@ -79,10 +78,12 @@ def render_css_colors(h: int, s=100) -> list:
             layers_titles.append(html_classname)
             layers_html.append(preview_line)
 
-        for c in palette["dark"]:
+        for c in palette.dark:
             dark_lines.append("\t\t" + c.get_variable() +
                               ":\t" + c.get_hsla_value() + ";\n")
 
+
+    # write file
     lines = open_string + light_lines + open_dark + \
         dark_lines + close_dark + close_string
     layered_html = divs_sum_recursive(layers_titles)
@@ -121,8 +122,7 @@ def layers_css_template(name, layer, text_color, c_var):
 
 
 if __name__ == "__main__":
-    x = render_css_colors(202)
+    x = render_css_colors(204, 100)
 
-    for k, v in x.items():
-        print(k)
-        print(v)
+    # for k, v in x.items():
+    #     print(k, v.name)
