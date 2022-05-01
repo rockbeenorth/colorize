@@ -2,7 +2,7 @@
 
 Compact library to generate CSS/SCSS code and preview for layered UI.
 
-Demo: [https://rockbee.com/colorize](rockbee.com/colorize)
+Demo: [rockbee.com/colorize](https://rockbee.com/colorize)
 
 ## Idea
 
