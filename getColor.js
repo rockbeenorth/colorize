@@ -19,8 +19,8 @@ function getColor(h, level, s = 90) {
     if (h < 0 || h > 360) { h = h % 360 }
 
     // prepare HSL colors:
-    const light = `hsl: (${h}, ${s}%, ${SCALE_LIGHT[level - 1]}%)`
-    const dark = `hsl: (${h}, ${s - DARK_DESATURATE}%, ${SCALE_DARK[level - 1]}%)`
+    const light = `hsl(${h}, ${s}%, ${SCALE_LIGHT[level - 1]}%)`
+    const dark = `hsl(${h}, ${s - DARK_DESATURATE}%, ${SCALE_DARK[level - 1]}%)`
 
     return [light, dark]
 
