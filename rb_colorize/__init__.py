@@ -1,10 +1,8 @@
-import json
-
 from config import settings, about
 from tools.color import degree_correction
 
-# from previews.css import render_css_colors
-# from previews.generate_preview import index_html, generate_basic_css
+from previews.css import render_css_colors
+from previews.generate_preview import index_html, generate_basic_css
 
 collection_names = settings["COLLECTIONS"]
 version = about["VERSION"]
@@ -65,9 +63,12 @@ def palettes(h, s):
 
 if __name__ == "__main__":
 
-    from tools.color import Color
-    # # red = Color(275, 90, 80)
-    # red = Color(221, 90, 80)
+    palettes(14, 90)
+    
+
+    # from tools.color import Color
+    # red = Color(1111, 90, 80)
+    # # red = Color(221, 90, 80)
     # red.set_name()
     # opposite = red.opposite
 
@@ -83,9 +84,9 @@ if __name__ == "__main__":
 
     # print(json.dumps(make, indent=4))
 
-    from tools.collection import Collection
+    # from tools.collection import Collection
 
-    y = Collection('Yella', 220, 80)
+    # y = Collection('Yella', 220, 80)
     
-    print('dark', y.dark)
-    print('light', y.light)
+    # print('dark', y.dark)
+    # print('light', y.light)
