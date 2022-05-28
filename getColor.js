@@ -1,3 +1,7 @@
+// TODO: replace checks with errors
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw
+
+
 function getColor(h, level, s = 90) {
 
     // Lightness scales for light and dark modes
@@ -8,7 +12,7 @@ function getColor(h, level, s = 90) {
     const DARK_DESATURATE = 10
 
     // TODO: check if saturation is less then DARK_DESATURATE and if so, don't desaturate?
-
+    
     // Check if level is within range 1-10
     if (level > 10) { level = 10 }
     else if (level < 1) { level = 2 }
