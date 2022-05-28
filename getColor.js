@@ -6,7 +6,7 @@ function getColor(h, level, s=90) {
     const DARK_DESATURATE = 10
 
     if (level > 10) {level = 10}
-    else if (level < 1) {level = 1}
+    else if (level < 1) {level = 2}
 
     if (h < 0 || h > 360) {h = h % 360}
 
