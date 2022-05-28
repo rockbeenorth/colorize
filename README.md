@@ -33,3 +33,5 @@ Python 3.7 and higher (using a lot of f-strings).
 1. https://learnui.design/blog/color-in-ui-design-a-practical-framework.html
 2. https://github.com/skratchdot/color-blind
 3. https://gka.github.io/chroma.js/
+4. https://bottosson.github.io/posts/oklab/
+5. https://oklch.evilmartians.io/
