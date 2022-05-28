@@ -9,7 +9,7 @@ def get_color(h:int, level:int, s:int=90) -> tuple:
     if level > 10:
         level = 10
     elif level < 1:
-        level = 1
+        level = 2
 
     # Check if hue is within range 0-360:
     if h < 0 or h > 360:
