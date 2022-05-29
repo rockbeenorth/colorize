@@ -1,4 +1,4 @@
-function getColor(h, level = 0, s = 90) {
+function colorLevel(h, level = 0, s = 90) {
 
     if (!Number.isInteger(h) || !Number.isInteger(level) || !Number.isInteger(s)) {
         throw 'All parameters should be numbers (integers).';
@@ -53,8 +53,8 @@ function getColor(h, level = 0, s = 90) {
 
 }
 
-// console.log(getColor(360, 5))
+// console.log(colorLevel(360, 5))
 // > [ 'hsl: (1, 90%, 39%)', 'hsl: (1, 80%, 63%)' ]
 
 
-console.log(getColor(-17, 7))
+console.log(colorLevel(-17, 7))
