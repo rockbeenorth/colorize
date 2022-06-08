@@ -1,8 +1,34 @@
+from bisect import bisect_right
 import json
 from colorsys import hls_to_rgb  # , rgb_to_hls
 from math import sqrt
 
 THRESHOLD = 140
+
+
+def get_percieved_brightness(HSL: tuple, optional=False) -> int:
+
+    # https://alienryderflex.com/hsp.html
+    
+    h, s, l = HSL
+    r, g, b = hsl_to_rgb(h, s, l)
+
+    # brightness  =  sqrt( .299 R2 + .587 G2 + .114 B2 )
+    optional_values = (.241, .691, .068)
+    informed_values = (.299, .587, .114)
+
+    X, Y, Z = informed_values
+
+    if optional:
+        X, Y, Z = optional_values
+    
+    brightness = sqrt(
+        r * r * X +
+        g * g * Y +
+        b * b * Z
+    )
+
+    return brightness
 
 
 def is_light_text(HSL: tuple, threshhold: int = THRESHOLD) -> bool:
@@ -16,15 +42,18 @@ def is_light_text(HSL: tuple, threshhold: int = THRESHOLD) -> bool:
     - `True` if text should be bright (white)
     - `False` if text should be dark (black)
     """
-    h, s, l = HSL
+    # h, s, l = HSL
 
-    r, g, b = hsl_to_rgb(h, s, l)
+    # r, g, b = hsl_to_rgb(h, s, l)
 
-    brightness = sqrt(
-        r * r * .241 +
-        g * g * .691 +
-        b * b * .068
-    )
+    # # Luminocity?
+    # brightness = sqrt(
+    #     r * r * .241 +
+    #     g * g * .691 +
+    #     b * b * .068
+    # )
+
+    brightness = get_percieved_brightness(HSL)
 
     if brightness < threshhold:
         return True
@@ -188,7 +217,7 @@ class Color:
         self.hex = self.get_hex_value()
         self.bright_text = is_light_text_rgb(self.rgb)
         self.normalized = normalize_color(self.h)
-
+        self.luminocity = get_percieved_brightness(self.hsl)
         self.set_name()
         self.set_layer()
         self.set_order()

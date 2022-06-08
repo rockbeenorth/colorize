@@ -63,13 +63,22 @@ def palettes(h, s):
 
 if __name__ == "__main__":
 
-    palettes(14, 90)
+    # palettes(14, 90)
     
 
-    # from tools.color import Color
+    THRESHOLD = 140
+
+    from tools.color import Color
+
+    for i in range(0, 360):
+        c = Color(i, 80, 50)
+        lume = int(c.luminocity)
+        diff = lume - THRESHOLD
+        print(i, c.name, f'\t{lume}', f'\t{diff}')
+
     # red = Color(1111, 90, 80)
     # # red = Color(221, 90, 80)
-    # red.set_name()
+    # # red.set_name()
     # opposite = red.opposite
 
     # next = red.get_opposite_class()
