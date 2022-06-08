@@ -64,38 +64,39 @@ def palettes(h, s):
 if __name__ == "__main__":
 
     # palettes(14, 90)
-    
 
     THRESHOLD = 140
 
     from tools.color import Color
 
+    above = []
+    below = []
+    zero = []
+    
+    lumes = []
+    diffs = []
+
     for i in range(0, 360):
         c = Color(i, 80, 50)
         lume = int(c.luminocity)
         diff = lume - THRESHOLD
+        lumes.append(lume)
+        diffs.append(diff)
+
+        if diff < 0:
+            below.append(c)
+        elif diff > 0:
+            above.append(c)
+        else:
+            zero.append(c)
+
         print(i, c.name, f'\t{lume}', f'\t{diff}')
 
-    # red = Color(1111, 90, 80)
-    # # red = Color(221, 90, 80)
-    # # red.set_name()
-    # opposite = red.opposite
+    print('above', len(above))
+    print('below', len(below))
+    print('zero', len(zero))
 
-    # next = red.get_opposite_class()
-
-    # print(red.name, red, opposite)
-    # print(next.name, next, next.hsl, next.get_json())
-
-    # make = main(333, 80)
-    # palettes(333, 80)
-
-    # print(type(make))
-
-    # print(json.dumps(make, indent=4))
-
-    # from tools.collection import Collection
-
-    # y = Collection('Yella', 220, 80)
-    
-    # print('dark', y.dark)
-    # print('light', y.light)
+    print(min(lumes))
+    print(max(lumes))
+    print(min(diffs))
+    print(max(diffs))
