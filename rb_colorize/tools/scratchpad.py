@@ -25,13 +25,14 @@ for i in range(0, 360):
     else:
         zero.append(c)
 
-    print(i, c.name, f'\t{lume}', f'\t{diff}')
+    # print(i, c.name, f'\t{lume}', f'\t{diff}')
+    print(f'{i},{c.name},{lume},{diff}')
 
-print('above', len(above))
-print('below', len(below))
-print('zero', len(zero))
+# print('above', len(above))
+# print('below', len(below))
+# print('zero', len(zero))
 
-print(min(lumes))
-print(max(lumes))
-print(min(diffs))
-print(max(diffs))
+# print(min(lumes))
+# print(max(lumes))
+# print(min(diffs))
+# print(max(diffs))

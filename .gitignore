@@ -21,7 +21,7 @@ output/
 # C extensions
 *.so
 
-*.ipynb
+# *.ipynb
 
 # Distribution / packaging
 env/
