@@ -1,19 +1,18 @@
-from bisect import bisect_right
 import json
 from colorsys import hls_to_rgb  # , rgb_to_hls
 from math import sqrt
+# from rb_colorize.config import settings
 
+# THRESHOLD = settings['THRESHOLD']
 THRESHOLD = 140
 
-
-def get_percieved_brightness(HSL: tuple, optional=False) -> int:
+def get_luminocity(HSL: tuple, optional=False) -> int:
 
     # https://alienryderflex.com/hsp.html
     
     h, s, l = HSL
     r, g, b = hsl_to_rgb(h, s, l)
 
-    # brightness  =  sqrt( .299 R2 + .587 G2 + .114 B2 )
     optional_values = (.241, .691, .068)
     informed_values = (.299, .587, .114)
 
@@ -22,13 +21,16 @@ def get_percieved_brightness(HSL: tuple, optional=False) -> int:
     if optional:
         X, Y, Z = optional_values
     
-    brightness = sqrt(
+    luminocity = sqrt(
         r * r * X +
         g * g * Y +
         b * b * Z
     )
 
-    return brightness
+    return luminocity
+
+def get_luminocity_percetage(luminocity):
+    return int((luminocity/255)*100)
 
 
 def is_light_text(HSL: tuple, threshhold: int = THRESHOLD) -> bool:
@@ -53,7 +55,7 @@ def is_light_text(HSL: tuple, threshhold: int = THRESHOLD) -> bool:
     #     b * b * .068
     # )
 
-    brightness = get_percieved_brightness(HSL)
+    brightness = get_luminocity(HSL)
 
     if brightness < threshhold:
         return True
@@ -217,14 +219,15 @@ class Color:
         self.hex = self.get_hex_value()
         self.bright_text = is_light_text_rgb(self.rgb)
         self.normalized = normalize_color(self.h)
-        self.luminocity = get_percieved_brightness(self.hsl)
+        self.luminocity = get_luminocity(self.hsl)
+        self.luminocity_percentage = get_luminocity_percetage(self.luminocity)
         self.set_name()
         self.set_layer()
         self.set_order()
 
     # Setters
 
-    def set_layer(self, layer: int = None) -> int:
+    def set_layer(self, layer: int = None):
         if layer == None:
             self.layer = int(self.l)
         else:
@@ -236,8 +239,7 @@ class Color:
         else:
             self.order = int(order)
 
-    def set_name(self, name: str = None) -> str:
-
+    def set_name(self, name: str = None):
         if self.l <= 25:
             lighness_title = q1
         elif 25 < self.l <= 50:
@@ -300,27 +302,20 @@ class Color:
     def get_hex_value(self):
         return rgb_to_hex(*self.rgb)
 
-    def get_json(self):
-        repr = {
-            "name": self.name,
-            "var": self.get_variable(),
-            "hex": self.hex,
-            "rgb": self.rgb,
-            "hsl": self.hsl,
-            "bright_text": self.bright_text
-        }
-        return json.dumps(repr)
-
     def get_object(self):
-        repr = {
+        return {
             "name": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
             "rgb": self.rgb,
             "hsl": self.hsl,
-            "bright_text": self.bright_text
+            "bright_text": self.bright_text,
+            "luminocity": self.luminocity,
+            "luminocity_percentage": self.luminocity_percentage,
         }
-        return repr
+
+    def get_json(self):
+        return json.dumps(self.get_object())
 
     def __repr__(self):
         return f"Color({self.name}-{self.order}: {self.h}, {self.s}, {self.l})"

@@ -18,6 +18,33 @@ color_settings = {
     "TEXT_BLACK": Color(0, 0, 6).get_hsla_value(),
 }
 
+collection_names = {
+    'styling': [
+        'arrow',
+        'bungee',
+        'cable',
+        'dream',
+    ],
+    'gray': [
+        'gray',
+        'gray-warm',
+        'gray-cool',
+    ],
+    'ui': [
+        'notification',
+        'warning',
+    ]
+}
+
+color_schemes = {
+    "complementary": [0, 180],
+    "split_complementary": [0, 150, -150],
+    "double_complementary": [0, 30, 180, 210],
+    "triadic": [0, 120, 240],
+    "square": [0, 90, 180, 270],
+    "analogous": [0, -30, 30],
+}
+
 file_paths = {
     "PATH":         f"{PROJECT_DIRECTORY}/core/",
     "BASIC_CSS":   "_color_scheme.scss",
@@ -29,5 +56,5 @@ file_paths = {
 }
 
 about = {
-    "VERSION": "Alpha 0.1.0"
+    "VERSION": "Alpha 0.1.1"
 }
