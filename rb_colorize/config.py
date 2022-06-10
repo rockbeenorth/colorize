@@ -6,7 +6,7 @@ PROJECT_DIRECTORY = os.getcwd().replace('/rb_colorize', '')
 settings = {
     "THRESHOLD": 140,
     "COLLECTIONS": ["arrow", "bungee", "cable"],
-    "DARK_DESATURATE": 20,
+    "DARK_DESATURATE": 10,
     "DARK_INCREASE_BRIGHTNESS": 3,
     "FONT": '-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Fira Sans", Roboto, Ubuntu, "Droid Sans", "Arial", sans-serif',
 }
@@ -24,6 +24,8 @@ collection_names = {
         'bungee',
         'cable',
         'dream',
+        'edge',
+        'fruit',
     ],
     'gray': [
         'gray',

@@ -15,7 +15,8 @@ def build_steps(n=10):
     n = n + 2
     step_size = 1 / n
     nums = []
-    x = 0
+    # x = 0
+    x = step_size
     for _ in range(0, n):
         if x == 0:
             nums.append(0)
@@ -79,20 +80,25 @@ class Collection:
         self.l = normalize_to_hundred(l)
         self.a = a
         self.light_objects = self.get_collection(gradient=self.gradient[0])
-        self.dark_objects = self.get_collection(gradient=self.gradient[1])
+        self.dark_objects = self.get_collection(gradient=self.gradient[1], dark=True)
         self.light = self.get_collection(
             gradient=self.gradient[0], objects=False)
         self.dark = self.get_collection(
-            gradient=self.gradient[1], objects=False)
+            gradient=self.gradient[1], objects=False, dark=True)
         self.objects = objects
         # print('collection gradient', self.gradient)
 
-    def get_collection(self, gradient, objects=True):
+    def get_collection(self, gradient, objects=True, dark=False):
         collection = []
         for n in gradient:
+
+            saturation = self.s
+            if dark:
+                saturation = self.s - dark_desaturate if self.s > dark_desaturate else self.s
+
             c = {
                 "h": self.h,
-                "s": self.s,
+                "s": saturation,
                 "l": n,
             }
             color = Color(**c)

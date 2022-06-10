@@ -1,50 +1,16 @@
 from config import settings, file_paths
 from tools.collection import Collection
+from tools.scheme import Scheme
 from tools.color import degree_correction
 from previews.generate_preview import divs_sum_recursive
 
 collection_names = settings["COLLECTIONS"]
 
 
-def render_css_colors(h: int, s=100) -> list:
+def render_css_colors(h: int, s=100, model=None) -> list:
 
+    MODEL = Scheme(h, s, model=model)
     palettes = {}
-
-    collections = [
-        {
-            "h": h,
-            "s": s,
-            "name": collection_names[0],
-        },
-        {
-            "h": degree_correction(h+120),
-            "s": s,
-            "name": collection_names[1],
-        },
-        {
-            "h": degree_correction(h-120),
-            "s": s,
-            "name": collection_names[2],
-        },
-        {
-            "h": 0,
-            "s": 0,
-            "name": "gray",
-        },
-        {
-            "h": degree_correction(h+37),
-            "s": s,
-            "name": 'warning',
-        },
-        {
-            "h": degree_correction(h-37),
-            "s": s,
-            "name": 'notify',
-        },
-    ]
-
-    for collection in collections:
-        palettes[collection["name"]] = Collection(**collection)
 
     # Template
     open_string = [":root {\n"]
@@ -59,10 +25,12 @@ def render_css_colors(h: int, s=100) -> list:
     layers_html = []
     layers_titles = []
 
-    for name, palette in palettes.items():
+    # for name, palette in palettes.items():
+    for palette in MODEL.collections:
+        name = palette.name
         for c in palette.light:
             light_lines.append("\t" + c.get_variable() +
-                               ":\t" + c.get_hsla_value() + ";\n")
+                               ": " + c.get_hsla_value() + ";\n")
 
             if c.bright_text:
                 text_color = "\tcolor: var(--text-color-light);\n"
@@ -80,7 +48,8 @@ def render_css_colors(h: int, s=100) -> list:
 
         for c in palette.dark:
             dark_lines.append("\t\t" + c.get_variable() +
-                              ":\t" + c.get_hsla_value() + ";\n")
+                            #   ":\t" + c.get_hsla_value() + ";\n")
+                              ": " + c.get_hsla_value() + ";\n")
 
 
     # write file
