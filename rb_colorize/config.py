@@ -32,7 +32,7 @@ collection_names = {
     ],
     'ui': [
         'notification',
-        'warning'
+        'warning',
     ]
 }
 
@@ -56,5 +56,5 @@ file_paths = {
 }
 
 about = {
-    "VERSION": "Alpha 0.1.0"
+    "VERSION": "Alpha 0.1.1"
 }

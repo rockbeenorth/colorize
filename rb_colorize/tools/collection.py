@@ -7,33 +7,26 @@ dark_desaturate = settings["DARK_DESATURATE"]
 
 def step(x):
     """
-    Calculate brightness for a given number
+    Calculate lightness value for a given number
     """
     return 1 - sqrt(1 - x * x)
 
-
-def build_steps(n=12):
-    """
-    Generate numbers of brighntness
-    """
+def build_steps(n=10):
+    n = n + 2
     step_size = 1 / n
     nums = []
     x = 0
     for _ in range(0, n):
         if x == 0:
             nums.append(0)
-        nums.append(x + step_size)
-        x = x + step_size
+            x = x + step_size
+        else:
+            nums.append(x)
+            x = x + step_size
 
-    # return nums
-    # TODO: this is a hack! Removing black abd white extremums
+    return nums[1:-1]
 
-    # print('steps: ', nums, len(nums[1:11]))
-    # print('steps 1-11: ', nums[1:11], len(nums[1:11]))
-    return nums[2:12]
-
-
-def build_gradient(steps=12) -> tuple:
+def build_gradient(steps) -> tuple:
 
     light = set()
     dark = set()
@@ -77,7 +70,7 @@ class Collection:
         l: int = 50,
         a=1,
         objects: bool = True,
-        steps: int = 12
+        steps: int = 10
     ):
         self.gradient = get_gradient(steps)
         self.name = name.lower()
