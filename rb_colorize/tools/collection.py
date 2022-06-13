@@ -86,6 +86,7 @@ class Collection:
         self.dark = self.get_collection(
             gradient=self.gradient[1], objects=False, dark=True)
         self.objects = objects
+        self.steps = steps
         # print('collection gradient', self.gradient)
 
     def get_collection(self, gradient, objects=True, dark=False):
@@ -111,3 +112,7 @@ class Collection:
                 collection.append(color)
 
         return collection
+
+    def __repr__(self) -> str:
+        scale = get_gradient(self.steps)
+        return f'<Collection {self.name}, light: {scale[0]} dark: {scale[1]}>' 

@@ -1,3 +1,6 @@
+from tools.scheme import Scheme
+from tools.color import Color
+from tools.collection import Collection
 from config import settings, about
 from previews.css import render_css_colors
 from previews.generate_preview import index_html, generate_basic_css
@@ -17,4 +20,29 @@ def main(h, s, model=None):
 
 if __name__ == "__main__":
 
-    main(207, 100, 'split_complementary')
+    # h = 210
+    # s = 90
+    # model = 'split_complementary'
+
+
+    # main(h,s, model=model)
+    # # print(x)
+    # result = []
+    # s = Scheme(210, 90, model='split_complementary', steps=12)
+    # for c in s.collections:
+
+    #     collection = {
+    #         c.name : [[color.get_json() for color in c.light], [color.get_json() for color in c.dark]]
+    #     }
+
+    #     result.append(collection)
+    #     print(collection)
+
+        # print("\n")
+        # print("\n")
+        # print(c.name, 'light', c.light)
+        # print(c.name, 'dark', c.dark)
+
+
+    color = Color(220)
+    print(color)
