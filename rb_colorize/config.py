@@ -3,6 +3,18 @@ from tools.color import Color
 
 PROJECT_DIRECTORY = os.getcwd().replace('/rb_colorize', '')
 
+ADJUSTED_BG_SATURATION_INCREASE = 3
+LIGHT_BG = Color(0,0,100)
+LIGHT_THRESHOLD_STEP = 30
+LIGHT_THRESHOLD = LIGHT_BG.l - LIGHT_THRESHOLD_STEP
+LIGHT_MODIFIER = -5
+
+DARK_BG = Color(0,0,0)
+DARK_THRESHOLD_STEP = 40
+DARK_THRESHOLD = DARK_BG.l + DARK_THRESHOLD_STEP
+DARK_MODIFIER = 20
+
+
 settings = {
     "THRESHOLD": 140,
     "COLLECTIONS": ["arrow", "bungee", "cable"],

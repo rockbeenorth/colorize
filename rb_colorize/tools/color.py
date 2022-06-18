@@ -1,9 +1,8 @@
 import json
 from colorsys import hls_to_rgb  # , rgb_to_hls
 from math import sqrt
-# from config import settings
 
-# THRESHOLD = settings['THRESHOLD']
+
 THRESHOLD = 140
 
 def get_luminocity(HSL: tuple, optional=False) -> int:
@@ -44,16 +43,6 @@ def is_light_text(HSL: tuple, threshhold: int = THRESHOLD) -> bool:
     - `True` if text should be bright (white)
     - `False` if text should be dark (black)
     """
-    # h, s, l = HSL
-
-    # r, g, b = hsl_to_rgb(h, s, l)
-
-    # # Luminocity?
-    # brightness = sqrt(
-    #     r * r * .241 +
-    #     g * g * .691 +
-    #     b * b * .068
-    # )
 
     brightness = get_luminocity(HSL)
 
@@ -302,8 +291,35 @@ class Color:
     def get_hex_value(self):
         return rgb_to_hex(*self.rgb)
 
+    def get_light_bg_color(self) -> tuple:
+        """
+        returns H,S,L values for bg color if it is more than a given threshold, else returns values for white background.
+        """
+
+        lightBg = 100;
+        lightThresholdStep = 30
+        lightThreshold = lightBg - lightThresholdStep
+
+        if self.luminocity_percentage > lightThreshold:
+            return self.h, 3, lightBg - self.luminocity_percentage - 5
+        else:
+            return self.h, 0, 100
+
+    def get_dark_bg_color(self):
+        darkBg = 0
+        darkThresholdStep = 40
+        darkThreshold = darkBg + darkThresholdStep
+
+        if self.luminocity_percentage <= darkThreshold:
+            return self.h, 3, 100 - self.luminocity_percentage + 20
+        else:
+            return self.h, 0, 0
+        
+
+
     def get_object(self):
         return {
+            "order": self.order,
             "name": self.name,
             "var": self.get_variable(),
             "hex": self.hex,
@@ -312,6 +328,8 @@ class Color:
             "bright_text": self.bright_text,
             "luminocity": self.luminocity,
             "luminocity_percentage": self.luminocity_percentage,
+            "light_bg": self.get_light_bg_color(),
+            "dark_bg": self.get_dark_bg_color(),
         }
 
     def get_json(self):
