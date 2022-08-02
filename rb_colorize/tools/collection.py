@@ -17,13 +17,16 @@ def build_steps(n=10):
     nums = []
     # x = 0
     x = step_size
-    for _ in range(0, n):
-        if x == 0:
-            nums.append(0)
-            x = x + step_size
-        else:
-            nums.append(x)
-            x = x + step_size
+    for _ in range(1, n+1):
+    # for _ in range(0, n):
+    #     if x == 0:
+    #         nums.append(0)
+    #         x = x + step_size
+        # else:
+            # nums.append(x)
+            # x = x + step_size
+        nums.append(x)
+        x = x + step_size
 
     return nums[1:-1]
 

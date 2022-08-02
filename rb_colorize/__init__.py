@@ -20,12 +20,13 @@ def main(h, s, model=None):
 
 if __name__ == "__main__":
 
-    # h = 210
-    # s = 90
-    # model = 'split_complementary'
+    h = 90
+    s = 50
+    # model = 'triadic'
+    model = 'complementary'
 
 
-    # main(h,s, model=model)
+    main(h, s, model=model)
     # # print(x)
     # result = []
     # s = Scheme(210, 90, model='split_complementary', steps=12)
@@ -44,5 +45,5 @@ if __name__ == "__main__":
         # print(c.name, 'dark', c.dark)
 
 
-    color = Color(220)
-    print(color)
+    # color = Color(220)
+    # print(color)

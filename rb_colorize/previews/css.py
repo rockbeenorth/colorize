@@ -9,7 +9,7 @@ collection_names = settings["COLLECTIONS"]
 
 def render_css_colors(h: int, s=100, model=None) -> list:
 
-    MODEL = Scheme(h, s, model=model, steps=10)
+    MODEL = Scheme(h, s, model=model, steps=12)
     palettes = {}
 
     # Template
