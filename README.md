@@ -1,20 +1,18 @@
 # RB-Colorize
 
-Compact library to generate CSS/SCSS code and preview for layered UI.
+Colorize generates logarithmic color palettes for a given hue. Such an approach prevents the use of opacity and reduces development issues. It supports dark mode and calculates text color for each background color.
 
-Demo: [rockbee.com/colorize](https://rockbee.com/colorize)
+This implementation generates CSS/SCSS code and a preview page for layered UI.
 
-## Idea
+I have built an API and a demo stand where you can see how it works: [rockbee.com/colorize](https://rockbee.com/colorize)
 
-Generate color palettes for a UI:
+## Idea: why logarithmic scale for a palette?
 
-- Core/brand color
-- Two additional color palettes
-- Errors
-- Notifications
-- Grayscale
+I decided to apply a log scale to 100% lightness and wrote an algorithm that calculates ligtness value for a given number of steps (how many swatches we want to have in our palette; spoiler: 12 is more than enough).
 
-Script generates all libraries based on one hue/saturation pair (only hue required to operate correctly).
+Since a step between each layer is relatively subtle, they can be combined for more nuanced situations.
+
+I call them layers instead of swatches or tones, because it doesn't matter which color they are, they can be used for a layered intefaces.
 
 ## Requirements
 
