@@ -14,6 +14,14 @@ Since a step between each layer is relatively subtle, they can be combined for m
 
 I call them layers instead of swatches or tones, because it doesn't matter which color they are, they can be used for a layered intefaces.
 
+## Next steps
+
+I want to update this thing one day:
+
+- Build a public API
+- Build a Figma plugin
+- Build a better demo stand (generate palettes for a given hue instead of random, return readable tokens + JSON copy-paste)
+
 ## Requirements
 
 Python 3.7 and higher (using a lot of f-strings).
