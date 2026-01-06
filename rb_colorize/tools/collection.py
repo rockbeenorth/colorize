@@ -1,9 +1,26 @@
+import math
 from math import sqrt
 from tools.color import Color, degree_correction, normalize_to_hundred
 from config import settings
 
 dark_desaturate = settings["DARK_DESATURATE"]
 
+
+
+def create_log_scale(num_steps, start=0):
+    if not 5 <= num_steps <= 17:
+        raise ValueError("Number of steps must be between 5 and 17")
+    if not 0 <= start <= 50:
+        raise ValueError("Start value must be between 0 and 50")
+
+    result = [start]
+    base = math.exp(math.log(100) / (num_steps - 1))
+
+    for i in range(1, num_steps):
+        next_value = start + math.ceil(math.pow(base, i) - 1)
+        result.append(next_value)
+
+    return result
 
 def step(x):
     """
@@ -15,20 +32,13 @@ def build_steps(n=10):
     n = n + 2
     step_size = 1 / n
     nums = []
-    # x = 0
     x = step_size
     for _ in range(1, n+1):
-    # for _ in range(0, n):
-    #     if x == 0:
-    #         nums.append(0)
-    #         x = x + step_size
-        # else:
-            # nums.append(x)
-            # x = x + step_size
         nums.append(x)
         x = x + step_size
 
     return nums[1:-1]
+
 
 def build_gradient(steps) -> tuple:
 
@@ -54,7 +64,8 @@ def build_gradient(steps) -> tuple:
     return light_list, dark_list
 
 
-def get_gradient(steps=12) -> tuple:
+
+def get_gradient(steps=12, light_initial=100, dark_initial=0) -> tuple:
     """
     Return `light` and `dark` gradients (lists of `int` lightness values)
     """
@@ -62,6 +73,7 @@ def get_gradient(steps=12) -> tuple:
     gradient = build_gradient(steps)
 
     return gradient
+
 
 
 class Collection:
@@ -74,9 +86,12 @@ class Collection:
         l: int = 50,
         a=1,
         objects: bool = True,
-        steps: int = 10
+        steps: int = 10,
+        light_initial: int = 0,
+        dark_initial: int = 100
     ):
-        self.gradient = get_gradient(steps)
+        # self.gradient = get_gradient(steps)
+        self.gradient = get_gradient(steps, light_initial, dark_initial)
         self.name = name.lower()
         self.h = degree_correction(h)
         self.s = normalize_to_hundred(s)
@@ -118,4 +133,4 @@ class Collection:
 
     def __repr__(self) -> str:
         scale = get_gradient(self.steps)
-        return f'<Collection {self.name}, light: {scale[0]} dark: {scale[1]}>' 
+        return f'<Collection {self.name}, light: {scale[0]} dark: {scale[1]}>'

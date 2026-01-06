@@ -5,6 +5,9 @@ tools/__pycache__/
 *$py.class
 .DS_Store
 
+repomix-output.xml
+task.md
+
 old/
 
 source/

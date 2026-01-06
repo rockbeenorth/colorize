@@ -1,0 +1,31 @@
+{
+    "id": "VariableCollectionId:2380:21564",
+    "name": "rb-color-layer",
+    "modes": { "2380:0": "light", "2380:1": "dark" },
+    "variableIds": ["VariableID:2380:21565"],
+    "variables": [
+        {
+            "id": "VariableID:2380:21565",
+            "name": "--layer-1",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "2380:0": { "r": 1, "g": 1, "b": 1, "a": 1 },
+                "2380:1": { "r": 0, "g": 0, "b": 0, "a": 1 }
+            },
+            "resolvedValuesByMode": {
+                "2380:0": {
+                    "resolvedValue": { "r": 1, "g": 1, "b": 1, "a": 1 },
+                    "alias": null
+                },
+                "2380:1": {
+                    "resolvedValue": { "r": 0, "g": 0, "b": 0, "a": 1 },
+                    "alias": null
+                }
+            },
+            "scopes": ["ALL_SCOPES"],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        }
+    ]
+}

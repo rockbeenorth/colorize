@@ -1,0 +1,1004 @@
+[
+  {
+    "id": "VariableCollectionId:459472c7-101d-41e9-8314-3ed6da0538bd",
+    "name": "rb-color-arrow",
+    "modes": {
+      "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": "light",
+      "1e925d2f-3788-4879-884f-b57500345e28:1": "dark"
+    },
+    "variableIds": [
+      "VariableID:1ed5bc59-aa45-4a28-a422-da45b53501cb",
+      "VariableID:054210ae-6184-4942-9aed-aa6bf61e6344",
+      "VariableID:00afa61f-dcfc-4a53-8a74-d768795170cb",
+      "VariableID:2054c4de-8c8e-4b21-9142-9e78d61d4d05",
+      "VariableID:b0dbabab-e5e4-40b1-bc38-da3d9da5f81f",
+      "VariableID:f63bd83e-5371-4cb1-892d-cc550bfef544",
+      "VariableID:e3188976-1e46-4dd7-a89e-34bd82d441e8"
+    ],
+    "variables": [
+      {
+        "id": "VariableID:1ed5bc59-aa45-4a28-a422-da45b53501cb",
+        "name": "--arrow-1",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.9411764705882353,
+            "g": 0.9647058823529412,
+            "b": 1.0,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0,
+            "g": 0.01568627450980392,
+            "b": 0.0392156862745098,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.9411764705882353,
+              "g": 0.9647058823529412,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.01568627450980392,
+              "b": 0.0392156862745098,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:054210ae-6184-4942-9aed-aa6bf61e6344",
+        "name": "--arrow-2",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.8784313725490196,
+            "g": 0.9254901960784314,
+            "b": 1.0,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0,
+            "g": 0.0392156862745098,
+            "b": 0.10196078431372549,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.8784313725490196,
+              "g": 0.9254901960784314,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.0392156862745098,
+              "b": 0.10196078431372549,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:00afa61f-dcfc-4a53-8a74-d768795170cb",
+        "name": "--arrow-3",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.7803921568627451,
+            "g": 0.8627450980392157,
+            "b": 1.0,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0,
+            "g": 0.0784313725490196,
+            "b": 0.2,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.7803921568627451,
+              "g": 0.8627450980392157,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.0784313725490196,
+              "b": 0.2,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:2054c4de-8c8e-4b21-9142-9e78d61d4d05",
+        "name": "--arrow-4",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.6588235294117647,
+            "g": 0.792156862745098,
+            "b": 1.0,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0,
+            "g": 0.12156862745098039,
+            "b": 0.3215686274509804,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.6588235294117647,
+              "g": 0.792156862745098,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.12156862745098039,
+              "b": 0.3215686274509804,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:b0dbabab-e5e4-40b1-bc38-da3d9da5f81f",
+        "name": "--arrow-5",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.47843137254901963,
+            "g": 0.6784313725490196,
+            "b": 1.0,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0,
+            "g": 0.19215686274509805,
+            "b": 0.5019607843137255,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.47843137254901963,
+              "g": 0.6784313725490196,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.19215686274509805,
+              "b": 0.5019607843137255,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:f63bd83e-5371-4cb1-892d-cc550bfef544",
+        "name": "--arrow-6",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.23921568627450981,
+            "g": 0.5294117647058824,
+            "b": 1.0,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0,
+            "g": 0.2823529411764706,
+            "b": 0.7411764705882353,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.23921568627450981,
+              "g": 0.5294117647058824,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.2823529411764706,
+              "b": 0.7411764705882353,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:e3188976-1e46-4dd7-a89e-34bd82d441e8",
+        "name": "--arrow-7",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "r": 0.0,
+            "g": 0.34509803921568627,
+            "b": 0.9019607843137255,
+            "a": 1
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "r": 0.0784313725490196,
+            "g": 0.43137254901960786,
+            "b": 1.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "e87db80a-5a24-44ad-ac02-7a9dab5ace0b:0": {
+            "resolvedValue": {
+              "r": 0.0,
+              "g": 0.34509803921568627,
+              "b": 0.9019607843137255,
+              "a": 1
+            },
+            "alias": null
+          },
+          "1e925d2f-3788-4879-884f-b57500345e28:1": {
+            "resolvedValue": {
+              "r": 0.0784313725490196,
+              "g": 0.43137254901960786,
+              "b": 1.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      }
+    ]
+  },
+  {
+    "id": "VariableCollectionId:b003f563-1979-4027-adfe-addce11edf03",
+    "name": "rb-color-vh-red",
+    "modes": {
+      "a8b8b131-f93c-49f2-885f-b13d183125bd:0": "light",
+      "373335f3-3c70-4781-8061-73ce9e23f00d:1": "dark"
+    },
+    "variableIds": [
+      "VariableID:8d4e7977-2946-4bff-8348-291114f74266",
+      "VariableID:811df180-164d-4183-9ed3-8f5adda9dd8f",
+      "VariableID:bcd63e17-3664-44da-a819-74e9bf167026",
+      "VariableID:3ebb7714-6fdd-4fe7-b13e-a164d035b51b",
+      "VariableID:571dba8b-f12d-4d9a-838f-26af7eabc2be",
+      "VariableID:0d5ce4e8-145b-4e8c-bd14-de6f9f1c526c",
+      "VariableID:3045c003-5bfc-4f7e-802e-6876ab5dcd4c"
+    ],
+    "variables": [
+      {
+        "id": "VariableID:8d4e7977-2946-4bff-8348-291114f74266",
+        "name": "--vh-red-1",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 1.0,
+            "g": 0.9490196078431372,
+            "b": 0.9411764705882353,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 0.0392156862745098,
+            "g": 0.00392156862745098,
+            "b": 0.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.9490196078431372,
+              "b": 0.9411764705882353,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 0.0392156862745098,
+              "g": 0.00392156862745098,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:811df180-164d-4183-9ed3-8f5adda9dd8f",
+        "name": "--vh-red-2",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 1.0,
+            "g": 0.8941176470588236,
+            "b": 0.8784313725490196,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 0.10196078431372549,
+            "g": 0.011764705882352941,
+            "b": 0.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.8941176470588236,
+              "b": 0.8784313725490196,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 0.10196078431372549,
+              "g": 0.011764705882352941,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:bcd63e17-3664-44da-a819-74e9bf167026",
+        "name": "--vh-red-3",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 1.0,
+            "g": 0.807843137254902,
+            "b": 0.7803921568627451,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 0.2,
+            "g": 0.027450980392156862,
+            "b": 0.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.807843137254902,
+              "b": 0.7803921568627451,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 0.2,
+              "g": 0.027450980392156862,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:3ebb7714-6fdd-4fe7-b13e-a164d035b51b",
+        "name": "--vh-red-4",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 1.0,
+            "g": 0.7058823529411765,
+            "b": 0.6588235294117647,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 0.3215686274509804,
+            "g": 0.043137254901960784,
+            "b": 0.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.7058823529411765,
+              "b": 0.6588235294117647,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 0.3215686274509804,
+              "g": 0.043137254901960784,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:571dba8b-f12d-4d9a-838f-26af7eabc2be",
+        "name": "--vh-red-5",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 1.0,
+            "g": 0.5490196078431373,
+            "b": 0.47843137254901963,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 0.5019607843137255,
+            "g": 0.06666666666666667,
+            "b": 0.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.5490196078431373,
+              "b": 0.47843137254901963,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 0.5019607843137255,
+              "g": 0.06666666666666667,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:0d5ce4e8-145b-4e8c-bd14-de6f9f1c526c",
+        "name": "--vh-red-6",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 1.0,
+            "g": 0.3411764705882353,
+            "b": 0.23921568627450981,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 0.7411764705882353,
+            "g": 0.09803921568627451,
+            "b": 0.0,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.3411764705882353,
+              "b": 0.23921568627450981,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 0.7411764705882353,
+              "g": 0.09803921568627451,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:3045c003-5bfc-4f7e-802e-6876ab5dcd4c",
+        "name": "--vh-red-7",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "r": 0.9019607843137255,
+            "g": 0.12156862745098039,
+            "b": 0.0,
+            "a": 1
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "r": 1.0,
+            "g": 0.20392156862745098,
+            "b": 0.0784313725490196,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "a8b8b131-f93c-49f2-885f-b13d183125bd:0": {
+            "resolvedValue": {
+              "r": 0.9019607843137255,
+              "g": 0.12156862745098039,
+              "b": 0.0,
+              "a": 1
+            },
+            "alias": null
+          },
+          "373335f3-3c70-4781-8061-73ce9e23f00d:1": {
+            "resolvedValue": {
+              "r": 1.0,
+              "g": 0.20392156862745098,
+              "b": 0.0784313725490196,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      }
+    ]
+  },
+  {
+    "id": "VariableCollectionId:99ca4ff9-7572-4932-a185-9189bb9fc4b4",
+    "name": "rb-color-backgrounds",
+    "modes": {
+      "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": "light",
+      "505d9470-4c4a-40c1-bab7-143656f205c3:1": "dark"
+    },
+    "variableIds": [
+      "VariableID:dbf54664-4806-4c0f-a2db-a6b22b2ca38d",
+      "VariableID:3f127495-a336-4ce9-899b-2ac4b00971e2",
+      "VariableID:39565636-9b6e-44f8-83cc-74b484f5d8f6",
+      "VariableID:cf24bcd2-00fa-438c-afb2-174c4c23a617",
+      "VariableID:0560caba-ea06-431c-90eb-1e331676e38b",
+      "VariableID:cfbb3b82-708e-4a77-9f4a-fc69ce2a72a8",
+      "VariableID:832f5689-3401-4f12-aeb8-8a6cedef9467"
+    ],
+    "variables": [
+      {
+        "id": "VariableID:dbf54664-4806-4c0f-a2db-a6b22b2ca38d",
+        "name": "--backgrounds-1",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.9764705882352941,
+            "g": 0.9686274509803922,
+            "b": 0.9647058823529412,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.023529411764705882,
+            "g": 0.0196078431372549,
+            "b": 0.01568627450980392,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.9764705882352941,
+              "g": 0.9686274509803922,
+              "b": 0.9647058823529412,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.023529411764705882,
+              "g": 0.0196078431372549,
+              "b": 0.01568627450980392,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:3f127495-a336-4ce9-899b-2ac4b00971e2",
+        "name": "--backgrounds-2",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.9529411764705882,
+            "g": 0.9411764705882353,
+            "b": 0.9254901960784314,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.06274509803921569,
+            "g": 0.050980392156862744,
+            "b": 0.0392156862745098,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.9529411764705882,
+              "g": 0.9411764705882353,
+              "b": 0.9254901960784314,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.06274509803921569,
+              "g": 0.050980392156862744,
+              "b": 0.0392156862745098,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:39565636-9b6e-44f8-83cc-74b484f5d8f6",
+        "name": "--backgrounds-3",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.9137254901960784,
+            "g": 0.8901960784313725,
+            "b": 0.8666666666666667,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.12156862745098039,
+            "g": 0.10196078431372549,
+            "b": 0.0784313725490196,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.9137254901960784,
+              "g": 0.8901960784313725,
+              "b": 0.8666666666666667,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.12156862745098039,
+              "g": 0.10196078431372549,
+              "b": 0.0784313725490196,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:cf24bcd2-00fa-438c-afb2-174c4c23a617",
+        "name": "--backgrounds-4",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.8666666666666667,
+            "g": 0.8313725490196079,
+            "b": 0.792156862745098,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.19607843137254902,
+            "g": 0.1607843137254902,
+            "b": 0.12549019607843137,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.8666666666666667,
+              "g": 0.8313725490196079,
+              "b": 0.792156862745098,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.19607843137254902,
+              "g": 0.1607843137254902,
+              "b": 0.12549019607843137,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:0560caba-ea06-431c-90eb-1e331676e38b",
+        "name": "--backgrounds-5",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.796078431372549,
+            "g": 0.7411764705882353,
+            "b": 0.6823529411764706,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.3058823529411765,
+            "g": 0.25098039215686274,
+            "b": 0.19607843137254902,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.796078431372549,
+              "g": 0.7411764705882353,
+              "b": 0.6823529411764706,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.3058823529411765,
+              "g": 0.25098039215686274,
+              "b": 0.19607843137254902,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:cfbb3b82-708e-4a77-9f4a-fc69ce2a72a8",
+        "name": "--backgrounds-6",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.7019607843137254,
+            "g": 0.6235294117647059,
+            "b": 0.5372549019607843,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.45098039215686275,
+            "g": 0.37254901960784315,
+            "b": 0.2901960784313726,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.7019607843137254,
+              "g": 0.6235294117647059,
+              "b": 0.5372549019607843,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.45098039215686275,
+              "g": 0.37254901960784315,
+              "b": 0.2901960784313726,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      },
+      {
+        "id": "VariableID:832f5689-3401-4f12-aeb8-8a6cedef9467",
+        "name": "--backgrounds-7",
+        "description": "",
+        "type": "COLOR",
+        "valuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "r": 0.5490196078431373,
+            "g": 0.4549019607843137,
+            "b": 0.35294117647058826,
+            "a": 1
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "r": 0.6431372549019608,
+            "g": 0.5450980392156862,
+            "b": 0.4392156862745098,
+            "a": 1
+          }
+        },
+        "resolvedValuesByMode": {
+          "b5645d2d-67e1-4527-9aca-786bcd622ed3:0": {
+            "resolvedValue": {
+              "r": 0.5490196078431373,
+              "g": 0.4549019607843137,
+              "b": 0.35294117647058826,
+              "a": 1
+            },
+            "alias": null
+          },
+          "505d9470-4c4a-40c1-bab7-143656f205c3:1": {
+            "resolvedValue": {
+              "r": 0.6431372549019608,
+              "g": 0.5450980392156862,
+              "b": 0.4392156862745098,
+              "a": 1
+            },
+            "alias": null
+          }
+        },
+        "scopes": [
+          "ALL_SCOPES"
+        ],
+        "hiddenFromPublishing": false,
+        "codeSyntax": {}
+      }
+    ]
+  }
+]

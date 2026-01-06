@@ -7,9 +7,9 @@ from previews.generate_preview import divs_sum_recursive
 collection_names = settings["COLLECTIONS"]
 
 
-def render_css_colors(h: int, s=100, model=None) -> list:
+def render_css_colors(h: int, s=100, model=None, steps=12, light_initial=0, dark_initial=100 ) -> list:
 
-    MODEL = Scheme(h, s, model=model, steps=12)
+    MODEL = Scheme(h, s, model=model, steps=steps, light_initial=0, dark_initial=100)
     palettes = {}
 
     # Template
@@ -31,6 +31,7 @@ def render_css_colors(h: int, s=100, model=None) -> list:
         for c in palette.light:
             light_lines.append("\t" + c.get_variable() +
                                ": " + c.get_hsla_value() + ";\n")
+                            #    ": " + c.get_hex_value() + ";\n")
 
             if c.bright_text:
                 text_color = "\tcolor: var(--text-color-light);\n"
@@ -50,6 +51,7 @@ def render_css_colors(h: int, s=100, model=None) -> list:
             dark_lines.append("\t\t" + c.get_variable() +
                             #   ":\t" + c.get_hsla_value() + ";\n")
                               ": " + c.get_hsla_value() + ";\n")
+                            #   ": " + c.get_hex_value() + ";\n")
 
 
     # write file

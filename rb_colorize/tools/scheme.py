@@ -5,7 +5,7 @@ from tools.color import degree_correction, normalize_to_hundred
 def check_scheme(model):
     if model == None:
         return [0], 'monochromatic'
-    
+
     if model in color_schemes:
         return color_schemes[model], model
     else:
@@ -20,7 +20,9 @@ class Scheme:
         l: int = 50,
         a=1,
         model: str = None,
-        steps: int = 10
+        steps: int = 10,
+        light_initial=0,
+        dark_initial=100
     ):
         self.h = degree_correction(h)
         self.s = normalize_to_hundred(s)
@@ -29,8 +31,9 @@ class Scheme:
         self.steps = steps
         self.scheme = check_scheme(model)[0]
         self.model = check_scheme(model)[1]
+        self.light_initial = light_initial
+        self.dark_initial = dark_initial
         self.collections = self.generate_collections()
- 
 
     def generate_collections(self):
 
@@ -38,10 +41,10 @@ class Scheme:
 
         for s in self.scheme:
             name = collection_names['styling'][self.scheme.index(s)]
-            collection = Collection(name, self.h + s, self.s, self.l, steps=self.steps)
+            collection = Collection(name, self.h + s, self.s, self.l, steps=self.steps, light_initial=self.light_initial, dark_initial=self.dark_initial)
             collections.append(collection)
 
-        # check self.h half to determine if it is warm or cool; 
+        # check self.h half to determine if it is warm or cool;
         # 345 + 180 == warm
         # 345 - 180 == cool
 
@@ -59,17 +62,17 @@ class Scheme:
 
         gray_saturation = 5
 
-        gray_collection = Collection(collection_names['gray'][0], 0, 0, steps=self.steps)
-        gray_warm_collection = Collection(collection_names['gray'][1], warm, gray_saturation, steps=self.steps)
-        gray_cool_collection = Collection(collection_names['gray'][2], cool, gray_saturation, steps=self.steps)
+        gray_collection = Collection(collection_names['gray'][0], 0, 0, steps=self.steps, light_initial=self.light_initial, dark_initial=self.dark_initial)
+        gray_warm_collection = Collection(collection_names['gray'][1], warm, gray_saturation, steps=self.steps, light_initial=self.light_initial, dark_initial=self.dark_initial)
+        gray_cool_collection = Collection(collection_names['gray'][2], cool, gray_saturation, steps=self.steps, light_initial=self.light_initial, dark_initial=self.dark_initial)
 
         collections.append(gray_collection)
         collections.append(gray_cool_collection)
         collections.append(gray_warm_collection)
 
-        nofification_collection = Collection(collection_names['ui'][0], h=self.h - 37, s=self.s, steps=self.steps)
-        warning_collection = Collection(collection_names['ui'][1], h=self.h + 37, s=self.s, steps=self.steps)
-        
+        nofification_collection = Collection(collection_names['ui'][0], h=self.h - 37, s=self.s, steps=self.steps, light_initial=self.light_initial, dark_initial=self.dark_initial)
+        warning_collection = Collection(collection_names['ui'][1], h=self.h + 37, s=self.s, steps=self.steps, light_initial=self.light_initial, dark_initial=self.dark_initial)
+
         collections.append(nofification_collection)
         collections.append(warning_collection)
 
